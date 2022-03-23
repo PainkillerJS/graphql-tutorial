@@ -1,0 +1,41 @@
+# This file was generated based on ".graphqlconfig". Do not edit manually.
+
+schema {
+    query: Query
+    mutation: Mutation
+}
+
+type Mutation {
+    createUser(input: UserInput): User
+}
+
+type Post {
+    content: String
+    id: ID
+    title: String
+}
+
+type Query {
+    getAllUsers: [User]
+    getUser(id: ID): User
+}
+
+type User {
+    age: Int
+    id: ID
+    name: String
+    posts: [Post]
+}
+
+input PostInput {
+    content: String!
+    id: ID
+    title: String!
+}
+
+input UserInput {
+    age: Int!
+    id: ID
+    name: String!
+    posts: [PostInput]
+}
